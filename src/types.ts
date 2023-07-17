@@ -11,6 +11,7 @@ type Handler = ( event: Event ) => void;
 
 type Options = {
   ignoreInitial?: boolean,
+  ignoreReady?: boolean,
   pollingInterval?: number
 };
 

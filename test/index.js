@@ -20,6 +20,7 @@ describe ( 'File Pollex', it => {
 
     const dispose = filePollex ( FILE_PATH, event => events.push ( event ), {
       ignoreInitial: true,
+      ignoreReady: false,
       pollingInterval: 400
     });
 

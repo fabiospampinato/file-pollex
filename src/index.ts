@@ -14,6 +14,7 @@ const filePollex = ( filePath: string, handler: Handler, options: Options = {} )
   /* STATE */
 
   const ignoreInitial = options.ignoreInitial ?? false;
+  const ignoreReady = options.ignoreReady ?? false;
   const pollingInterval = options.pollingInterval ?? 1000;
 
   let initial = true;
@@ -26,6 +27,8 @@ const filePollex = ( filePath: string, handler: Handler, options: Options = {} )
   const on = ( event: Event ): void => {
 
     if ( initial && ignoreInitial && event !== 'ready' ) return;
+
+    if ( ignoreReady && event === 'ready' ) return;
 
     handler ( event );
 

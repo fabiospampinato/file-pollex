@@ -21,6 +21,7 @@ import watchFile from 'file-pollex';
 
 const watchOptions = {
   ignoreInitial: true, // Ignore the initial "add" event that may be emitted while the file path is being polled for the first time
+  ignoreReady: true, // Ignore the "ready" event, useful in combination with "ignoreInitial: true" to only get notified about actual changes
   pollingInterval: 1000 // Poll the file path on this interval, to more reliably detect "add" and "unlink" events
 };
 
