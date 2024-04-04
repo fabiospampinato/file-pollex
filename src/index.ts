@@ -122,3 +122,4 @@ const filePollex = ( filePath: string, handler: Handler, options: Options = {} )
 /* EXPORT */
 
 export default filePollex;
+export type {Event, Handler, Options};
